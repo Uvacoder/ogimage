@@ -1,6 +1,6 @@
 import type { RequestHandler } from '@sveltejs/kit'
 import chromium from 'chrome-aws-lambda'
-import core from 'puppeteer-core'
+import puppeteer from 'puppeteer-core'
 
 // flip this on in development
 // process.env.AWS_LAMBDA_FUNCTION_NAME = true
@@ -8,18 +8,10 @@ import core from 'puppeteer-core'
 export const get: RequestHandler = async ({ params }) => {
 	const url = 'http://localhost:3000/template?text='
 
-	// const browser = await chromium.puppeteer.launch({
-	// 	args: chromium.args,
-	// 	defaultViewport: chromium.defaultViewport,
-	// 	executablePath: await chromium.executablePath,
-	// 	headless: true,
-	// 	ignoreHTTPSErrors: true
-	// })
-
-	const browser = await core.launch({
+	const browser = await puppeteer.launch({
 		args: chromium.args,
 		defaultViewport: chromium.defaultViewport,
-		executablePath: await chromium.executablePath,
+		executablePath: 'node_modules/chrome-aws-lambda/bin/chromium.br',
 		headless: true,
 		ignoreHTTPSErrors: true
 	})
