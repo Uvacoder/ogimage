@@ -2,7 +2,7 @@
 
 Social share images are a must to grab the attention of readers when sharing your content on social media.
 
-## 🤨 What is an open graph image?
+## 🤨 What is an Open Graph image?
 
 The [Open Graph protocol](https://ogp.me/) is extra metadata about your site social media sites can use. One of the meta tags you can include is `og:image` which is a link to a **1200x630** pixels image that's going to be used as the preview image for your content.
 
