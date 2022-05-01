@@ -26,7 +26,7 @@ If you have a blog creating a social share image for every post is tedious so I 
 
 In development you can uncomment the `process.env.AWS_LAMBDA_FUNCTION_NAME = true` line so `chrome-aws-lambda` thinks it's in a serverless environment and uses the Chromium binary.
 
-The Chromium bundle size is going to increase more over time so you can use an older version if you encounter that problem because if you're using Next.js the size of the framework might push you over the 50 MB limit.
+If you go over the 50 MB size limit because of the size of the Chromium binary you can use an older version of `chrome-aws-lambda` to reduce the size.  
 
 ## 📜 Setup
 
