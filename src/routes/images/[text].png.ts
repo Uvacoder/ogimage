@@ -9,9 +9,9 @@ export const get: RequestHandler = async ({ params }) => {
 	const url = 'http://localhost:3000/template?text='
 
 	const browser = await puppeteer.launch({
-		args: [...chromium.args, '--hide-scrollbars', '--disable-web-security', '--no-sandbox'],
+		args: chromium.args,
 		defaultViewport: chromium.defaultViewport,
-		executablePath: '/node_modules/chrome-aws-lambda/bin/chromium.br',
+		executablePath: await chromium.executablePath,
 		headless: true,
 		ignoreHTTPSErrors: true
 	})
