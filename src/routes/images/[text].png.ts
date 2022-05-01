@@ -15,10 +15,12 @@ export const get: RequestHandler = async ({ params }) => {
 		ignoreHTTPSErrors: true
 	})
 
+	console.log(chromium.executablePath)
+
 	const page = await browser.newPage()
 	await page.setViewport({ width: 1200, height: 630 })
 	await page.goto(`${url}${encodeURIComponent(params.text)}`)
-	const image = await page.screenshot({ type: 'png' })
+	const image = (await page.screenshot({ type: 'png' })) as Buffer
 
 	return {
 		status: 200,
